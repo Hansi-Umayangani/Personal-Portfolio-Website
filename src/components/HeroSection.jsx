@@ -125,7 +125,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex justify-center space-x-6 mb-16"
+            className="flex justify-center space-x-6 mb-12"
           >
             <Button variant="ghost" as="a" href="https://github.com/Hansi-Umayangani" target="_blank">
               <Github className="h-6 w-6 text-tertiary" />
