@@ -3,7 +3,6 @@ import AboutHero from "../components/AboutHero";
 import { ExperienceSection } from "../components/ExperienceSection";
 import { SkillsSection } from "../components/SkillsSection";
 import { ProjectsHero } from "../components/ProjectsHero";
-import { FeaturedProjects } from "../components/FeaturedProjects";
 import { GitHubProjects } from "../components/GitHubProjects";
 import { ContactHero } from "../components/ContactHero";
 import { ContactForm } from "../components/ContactForm";
