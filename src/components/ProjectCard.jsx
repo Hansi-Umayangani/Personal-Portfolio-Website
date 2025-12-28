@@ -27,27 +27,27 @@ export function ProjectCard({ project }) {
 
             {/* Buttons */}
             <div className="mt-4 flex gap-3">
-          {project.demoLink && (
-            <a 
-              href={project.demoLink} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="px-4 py-2 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--secondary)] transition"
-            >
-              Live Demo
-            </a>
-          )}
-          {project.codeLink && (
-            <a 
-              href={project.codeLink} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="px-4 py-2 border border-[var(--primary)] text-[var(--primary)] rounded-lg hover:bg-[var(--primary)] hover:text-white transition"
-            >
-              Source Code
-            </a>
-          )}
-        </div>
+              {(project.demoLink || project.demoVideo) && (
+                <a
+                  href={project.demoVideo || project.demoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--secondary)] transition"
+                >
+                  {project.demoVideo ? "Watch Demo" : "Live Demo"}
+                </a>
+              )}
+              {project.codeLink && (
+                <a 
+                  href={project.codeLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="px-4 py-2 border border-[var(--primary)] text-[var(--primary)] rounded-lg hover:bg-[var(--primary)] hover:text-white transition"
+                >
+                  Source Code
+                </a>
+              )}
+            </div>
         </div>
     </motion.div>
     );

@@ -20,6 +20,10 @@ const repoImages = {
   "Pawfect-Home-Pet-Adoption-Website": pawfectImg,
 };
 
+const demoVideos = {
+  "AquaPOS-Desktop-Application": "https://drive.google.com/file/d/1uvLOmyRMV3cr9pWgLmTYx17jBaPXR2To/view?usp=sharing",
+};
+
 // Safe image resolver
 const getImage = (repo) =>
   repoImages[repo.name] || portfolioImg;
@@ -36,6 +40,7 @@ export function GitHubProjects() {
       description: repo.description,
       image: getImage(repo),
       demoLink: repo.homepage || "#",
+      demoVideo: demoVideos[repo.name] || null,
       codeLink: repo.html_url,
     }));
 
@@ -46,6 +51,7 @@ export function GitHubProjects() {
       description: repo.description,
       image: getImage(repo),
       demoLink: repo.homepage || "#",
+      demoVideo: demoVideos[repo.name] || null,
       codeLink: repo.html_url,
     }));
 
