@@ -1,6 +1,6 @@
 import HeroSection from "../components/HeroSection";
 import AboutHero from "../components/AboutHero";
-import ExperienceSection from "../components/ExperienceSection";
+import { ExperienceSection } from "../components/ExperienceSection";
 import SkillsSection from "../components/SkillsSection";
 import GitHubProjects from "../components/GitHubProjects";
 import ContactHero from "../components/ContactHero";
