@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import ThemeDropdown from "./ThemeDropdown";
 
@@ -11,12 +11,36 @@ const navigation = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    section?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+    });
     setIsOpen(false);
   };
+
+  /* Detect active section on scroll (replaces useLocation) */
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + 120;
+
+      for (const item of navigation) {
+        const section = document.getElementById(item.id);
+        if (
+          section &&
+          section.offsetTop <= scrollPos &&
+          section.offsetTop + section.offsetHeight > scrollPos
+        ) {
+          setActiveSection(item.id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav className="sticky top-0 z-20 w-full border-secondary/20 bg-background/95 backdrop-blur">
@@ -32,26 +56,33 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-6">
-            {navigation.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.id)}
-                className="px-3 py-2 rounded-md text-sm md:text-lg font-medium transition-colors hover:text-primary text-foreground hover:bg-secondary/10"
-              >
-                {item.name}
-              </button>
-            ))}
+            <div className="flex items-baseline space-x-6">
+              {navigation.map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`px-3 py-2 rounded-md text-sm md:text-lg font-medium transition-colors hover:text-primary ${
+                    activeSection === item.id
+                      ? "text-[var(--nav-active)] bg-primary/10"
+                      : "text-foreground hover:bg-secondary/10"
+                  }`}
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
+
             <ThemeDropdown />
           </div>
 
-          {/* Mobile */}
+          {/* Mobile Toggle */}
           <div className="md:hidden flex items-center gap-2">
             <ThemeDropdown />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-md text-foreground hover:bg-secondary/10"
             >
-              {isOpen ? <X /> : <Menu />}
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
@@ -65,7 +96,11 @@ export default function Navbar() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-secondary/10 hover:text-primary"
+                className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  activeSection === item.id
+                    ? "text-primary bg-primary/10"
+                    : "text-foreground hover:bg-secondary/10 hover:text-primary"
+                }`}
               >
                 {item.name}
               </button>
