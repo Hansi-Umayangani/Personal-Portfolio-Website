@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import profilePic from "../assets/Profile_Picture02.JPG";
+import profilePic from "../assets/Profile_Picture02.jpg";
 import Button from "./Button";
 import { Download } from "lucide-react";
 
@@ -45,7 +45,7 @@ export default function AboutHero() {
                 <div className="bg-[var(--background)]/80 dark:bg-[var(--background)]/60 rounded-2xl p-4 backdrop-blur-md">
                     <img
                     src={profilePic}
-                    alt="Profile picture"
+                    alt="Profile"
                     className="w-72  md:w-80 object-cover rounded-xl shadow-inner"
                     />
                 </div>
