@@ -4,6 +4,13 @@ import Button from "./Button";
 import { Download } from "lucide-react";
 
 export default function AboutHero() {
+
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className="py-20 bg-gradient-to-br from-[var(--primary)]/5 via-[var(--background)] to-[var(--secondary)]/5">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,13 +91,13 @@ export default function AboutHero() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-start items-center"
             >
-              <Button as="a" href="/contact" variant="solid">
+              <Button variant="solid" onClick={scrollToContact}>
                 Say Hello
               </Button>
 
               <Button
                 as="a"
-                href="/resume.pdf"
+                href="/D. P. L. Gimhani Hansika Umayangani - CV.pdf"
                 variant="outline"
                 download
               >
