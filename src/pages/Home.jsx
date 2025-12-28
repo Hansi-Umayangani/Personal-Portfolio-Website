@@ -37,7 +37,6 @@ const Home = () => {
         <ProjectsHero />
 
         <div className="container mx-auto px-4 py-4 md:py-2">
-          <FeaturedProjects />
           <GitHubProjects />
         </div>
       </section>
