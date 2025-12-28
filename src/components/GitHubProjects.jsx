@@ -14,15 +14,15 @@ const FEATURED_REPOS = [
 ];
 
 const repoImages = {
-  "Hansi-Umayangani/AquaPOS-Desktop-Application": aquaPOSImg,
-  "Hansi-Umayangani/S-S-Footwear-Promo-Website": ssFootwearImg,
-  "Hansi-Umayangani/Personal-Portfolio-Website": portfolioImg,
-  "Hansi-Umayangani/Pawfect-Home-Pet-Adoption-Website": pawfectImg,
+  "AquaPOS-Desktop-Application": aquaPOSImg,
+  "S-S-Footwear-Promo-Website": ssFootwearImg,
+  "Personal-Portfolio-Website": portfolioImg,
+  "Pawfect-Home-Pet-Adoption-Website": pawfectImg,
 };
 
 // Safe image resolver
 const getImage = (repo) =>
-  repoImages[repo.full_name] || portfolioImg;
+  repoImages[repo.name] || portfolioImg;
 
 export function GitHubProjects() {
   const { projects, loading, error } = useGitHubProjects();
