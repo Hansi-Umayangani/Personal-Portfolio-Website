@@ -1,81 +1,74 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import ThemeDropdown from "./ThemeDropdown";
 
-
 const navigation = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
+  { name: "Home", id: "home" },
+  { name: "About", id: "about" },
+  { name: "Projects", id: "projects" },
+  { name: "Contact", id: "contact" },
 ];
 
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
-    const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    section?.scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false);
+  };
 
   return (
     <nav className="sticky top-0 z-20 w-full border-secondary/20 bg-background/95 backdrop-blur">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          {/*Logo*/}
-          <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Gimhani Hansika
-            </Link>
-          </div>
+          {/* Logo */}
+          <button
+            onClick={() => scrollToSection("home")}
+            className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+          >
+            Gimhani Hansika
+          </button>
 
-          {/* Desktop nav links */}
+          {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-6">
-            <div className="flex items-baseline space-x-6">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`px-3 py-2 rounded-md text-sm md:text-lg font-medium transition-colors hover:text-primary ${
-                    location.pathname === item.href
-                        ? "text-[var(--nav-active)] bg-primary/10"
-                        : "text-foreground hover:bg-secondary/10"
-                    }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          
-            {/* Theme toggle dropdown */}
+            {navigation.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => scrollToSection(item.id)}
+                className="px-3 py-2 rounded-md text-sm md:text-lg font-medium transition-colors hover:text-primary text-foreground hover:bg-secondary/10"
+              >
+                {item.name}
+              </button>
+            ))}
             <ThemeDropdown />
           </div>
 
+          {/* Mobile */}
           <div className="md:hidden flex items-center gap-2">
-            <ThemeDropdown/>
+            <ThemeDropdown />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-md text-foreground hover:bg-secondary/10"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? <X /> : <Menu />}
             </button>
-          </div>      
+          </div>
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden border-t bg-background">
           <div className="px-4 pt-2 pb-3 space-y-2">
             {navigation.map((item) => (
-              <Link
+              <button
                 key={item.name}
-                to={item.href}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                  location.pathname === item.href
-                    ? "text-primary bg-primary/10"
-                    : "text-foreground hover:bg-secondary/10 hover:text-primary"
-                }`}
-                onClick={() => setIsOpen(false)}
+                onClick={() => scrollToSection(item.id)}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-secondary/10 hover:text-primary"
               >
                 {item.name}
-              </Link>
+              </button>
             ))}
           </div>
         </div>

@@ -1,7 +1,10 @@
-"use client";
-
 import { ProjectCard } from "./ProjectCard";
 import useGitHubProjects from "../hooks/useGitHubProjects";
+
+import aquaPOSImg from "../assets/Projects_Snapshots/AquaPOS.png";
+import ssFootwearImg from "../assets/Projects_Snapshots/S&S_Footwear_Web.png";
+import portfolioImg from "../assets/Projects_Snapshots/Portfolio.png";
+import pawfectImg from "../assets/Projects_Snapshots/Pawfect_Home_Web.png";
 
 // Featured projects
 const FEATURED_REPOS = [
@@ -11,30 +14,21 @@ const FEATURED_REPOS = [
 ];
 
 const repoImages = {
-  "Hansi-Umayangani/AquaPOS-Desktop-Application":
-    "src/assets/Projects_Snapshots/AquaPOS.png",
-
-  "Hansi-Umayangani/S-S-Footwear-Promo-Website":
-    "src/assets/Projects_Snapshots/S&S_Footwear_Web.png",
-
-  "Hansi-Umayangani/Personal-Portfolio-Website":
-    "src/assets/Projects_Snapshots/Portfolio.png",
-
-  "Hansi-Umayangani/Pawfect-Home-Pet-Adoption-Website":
-    "src/assets/Projects_Snapshots/Pawfect_Home_Web.png",
+  "Hansi-Umayangani/AquaPOS-Desktop-Application": aquaPOSImg,
+  "Hansi-Umayangani/S-S-Footwear-Promo-Website": ssFootwearImg,
+  "Hansi-Umayangani/Personal-Portfolio-Website": portfolioImg,
+  "Hansi-Umayangani/Pawfect-Home-Pet-Adoption-Website": pawfectImg,
 };
 
 // Safe image resolver
 const getImage = (repo) =>
-  repoImages[repo.full_name] ||
-  "src/assets/Projects_Snapshots/Portfolio.png";
+  repoImages[repo.full_name] || portfolioImg;
 
 export function GitHubProjects() {
   const { projects, loading, error } = useGitHubProjects();
 
   if (loading || error || !projects.length) return null;
 
-  // Featured projects
   const featuredProjects = projects
     .filter((repo) => FEATURED_REPOS.includes(repo.name))
     .map((repo) => ({
@@ -45,7 +39,6 @@ export function GitHubProjects() {
       codeLink: repo.html_url,
     }));
 
-  // Other GitHub projects (excluding featured)
   const otherProjects = projects
     .filter((repo) => !FEATURED_REPOS.includes(repo.name))
     .map((repo) => ({
