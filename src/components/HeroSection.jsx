@@ -13,6 +13,12 @@ export default function HeroSection() {
     });
   };
 
+  const scrollToProjects = () => {
+    document.getElementById("projects")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* 3D Digital Background */}
@@ -98,14 +104,14 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
-            <Button as="a" href="/projects">
+            <Button onClick={scrollToProjects}>
               View My Work
             </Button>
 
             <Button
               variant="outline"
               as="a"
-              href="/resume.pdf"
+              href="/D. P. L. Gimhani Hansika Umayangani - CV.pdf"
               download="Gimhani_Hansika_Resume.pdf"
               target="_blank"
             >
@@ -144,7 +150,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className="flex justify-center mt-2"
+            className="flex justify-center -mt-6"
           >
             <Button variant="ghost" onClick={scrollToNext}>
               <motion.div
