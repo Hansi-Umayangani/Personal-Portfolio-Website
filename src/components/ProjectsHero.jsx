@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function ProjectsHero() {
   return (
-    <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+    <section className="pt-24 pb-10 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
             <motion.div
