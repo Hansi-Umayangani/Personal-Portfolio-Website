@@ -43,7 +43,7 @@ export function SkillsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold text-gradient mb-4">Skills & Expertise</h2>
+          <h2 className="text-2xl md:text-4xl font-bold text-gradient mb-4">Skills & Expertise</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             A blend of technical expertise, management strengths, and collaborative tools 
             that enable seamless coordination of people, processes, and technology

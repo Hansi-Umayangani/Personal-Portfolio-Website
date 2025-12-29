@@ -57,7 +57,7 @@ export function ExperienceSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4">Experience</h2>
+          <h2 className="text-2xl md:text-4xl font-bold mb-4">Experience</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             A snapshot of professional experiences, creative contributions, and personal growth.
           </p>

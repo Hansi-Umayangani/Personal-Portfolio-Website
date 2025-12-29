@@ -80,7 +80,7 @@ export default function Footer() {
             <h4 className="font-semibold text-lg mb-4">Get In Touch</h4>
             <div className="space-y-2 text-muted-foreground">
               <p>Colombo, Sri Lanka</p>
-              <p>gimhanihansika2020@gmail.com</p>
+              <p>gimhani0202@gmail.com</p>
               <p>+94 78 6620118</p>
             </div>
           </motion.div>

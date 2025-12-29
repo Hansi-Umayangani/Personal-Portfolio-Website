@@ -28,7 +28,7 @@ export default function AboutHero() {
             About Me
           </h1>
 
-          <p className="max-w-2xl mx-auto text-lg" style={{ color: "var(--hero-paragraph)" }}>
+          <p className="max-w-2xl mx-auto text-md md:text-lg" style={{ color: "var(--hero-paragraph)" }}>
             An aspiring professional in Information Technology and Human Resource Management, 
             focused on bridging people and processes through technology.
           </p>
@@ -64,7 +64,7 @@ export default function AboutHero() {
           >
             <div>
               <h2 className="text-2xl font-semibold mb-4">My Journey</h2>
-              <p className="leading-relaxed text-justify">
+              <p className="leading-relaxed text-left">
                 With a foundation in both IT and HRM, I combine technical understanding 
                 with human-centered thinking to drive project success.
               </p>
@@ -72,14 +72,14 @@ export default function AboutHero() {
 
             <div>
               <h3 className="text-lg font-medium mb-2">What Drives Me</h3>
-              <p className="leading-relaxed text-justify">
+              <p className="leading-relaxed text-left">
                 Delivering efficient, people-focused solutions while continuously learning.
               </p>
             </div>
 
             <div>
               <h3 className="text-lg font-medium mb-2">Beyond Code</h3>
-              <p className="leading-relaxed text-justify">
+              <p className="leading-relaxed text-left">
                 Singing and performance enhance creativity, confidence, and resilience.
               </p>
             </div>
@@ -97,7 +97,7 @@ export default function AboutHero() {
 
               <Button
                 as="a"
-                href="/D. P. L. Gimhani Hansika Umayangani - CV.pdf"
+                href="/Gimhani Hansika - CV.pdf"
                 variant="outline"
                 download
               >

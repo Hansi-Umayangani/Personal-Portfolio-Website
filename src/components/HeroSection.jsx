@@ -81,7 +81,7 @@ export default function HeroSection() {
             </motion.h1>
 
             {/* Intro Paragraphs (Restored) */}
-            <p className="text-xl md:text-2xl text-[var(--hero-subheading)] mb-8 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-[var(--hero-subheading)] mb-8 max-w-3xl mx-auto">
               A passionate professional blending{" "}
               <span className="text-primary font-semibold">Software Development</span>,{" "}
               <span className="text-primary font-semibold">Project Management</span>,{" "}
@@ -90,7 +90,7 @@ export default function HeroSection() {
               to craft impactful solutions.
             </p>
 
-            <p className="text-lg text-[var(--hero-paragraph)] mb-12 max-w-2xl mx-auto">
+            <p className="text-md text-[var(--hero-paragraph)] mb-12 max-w-2xl mx-auto">
               I thrive on building meaningful user experiences, leading projects with clarity,
               and combining technical expertise with human-centered thinking.
               Always eager to learn, grow, and contribute to opportunities that make a real difference.
@@ -111,8 +111,8 @@ export default function HeroSection() {
             <Button
               variant="outline"
               as="a"
-              href="/D. P. L. Gimhani Hansika Umayangani - CV.pdf"
-              download="Gimhani_Hansika_Resume.pdf"
+              href="/Gimhani Hansika - CV.pdf"
+              download="Gimhani_Hansika_CV.pdf"
               target="_blank"
             >
               <Download className="mr-2 h-5 w-5" />

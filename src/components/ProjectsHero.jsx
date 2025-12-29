@@ -17,7 +17,7 @@ export function ProjectsHero() {
                        bg-clip-text text-transparent">
                 My Projects
             </h1>
-            <p className="text-xl text-[var(--hero-paragraph)] max-w-2xl mx-auto">
+            <p className="text-md md:text-lg text-[var(--hero-paragraph)] max-w-2xl mx-auto">
                 A showcase of my work, from personal experiments to production applications.
             </p>
             </motion.div>

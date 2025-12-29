@@ -7,8 +7,8 @@ const contactMethods = [
   {
     icon: Mail,
     label: "Email",
-    value: "gimhanihansika2020@gmail.com",
-    href: "mailto:gimhanihansika2020@gmail.com",
+    value: "gimhani0202@gmail.com",
+    href: "mailto:gimhani0202@gmail.com",
     description: "Best way to reach me",
   },
   {
