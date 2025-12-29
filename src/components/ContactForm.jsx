@@ -86,13 +86,19 @@ export function ContactForm() {
       className="relative"
     >
         {toastMessage && (
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50">
+        <div
+          className={`absolute top-0 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-lg shadow-lg z-50 ${
+            toastMessage.includes("Error")
+              ? "bg-red-500"
+              : "bg-green-500"
+          } text-white`}
+        >
           {toastMessage}
         </div>
       )}
       <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6">
         <h3 className="text-2xl font-semibold mb-6">Send me a message</h3>
-        <form className="space-y-6">
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <label htmlFor="name" className="font-medium">Name *</label>

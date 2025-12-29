@@ -6,14 +6,14 @@ import Button from "./Button";
 const socialLinks = [
   { icon: Github, href: "https://github.com/Hansi-Umayangani", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/gimhani-hansika-945292311", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:gimhanihansika2020@gmail.com", label: "Email" },
+  { icon: Mail, href: "mailto:gimhani0202@gmail.com", label: "Email" },
 ];
 
 const quickLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export default function Footer() {
@@ -58,12 +58,12 @@ export default function Footer() {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.href}
+                  <a
+                    href={link.href}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
